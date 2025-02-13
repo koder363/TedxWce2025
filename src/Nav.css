@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+*{
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: 0;
+}
+.bar {
+    background-color: #0B0B0B;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0px;
+    padding: 10px 20px;
+    width: 100%;
+    z-index: 1000;
+}
+#red {
+    color: red;
+}
+
+/* Blurry Bottom Border */
+.bar::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background: linear-gradient(to bottom, rgba(255, 0, 0, 0.5), transparent);
+    z-index: 1;
+}
+
+.logo img {
+    width: 8rem;
+    object-fit: contain;
+}
+.hamburger {
+    display: none;
+    cursor: pointer;
+    z-index: 1100;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+.content {
+    color: #CCCCCC;;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Apply font-family and weight to nav links */
+.nav-links {
+    display: flex;
+    font-family: 'Montserrat', sans-serif; /* Ensure font-family is inherited */
+}
+
+.items {
+    margin-right: 3rem;
+    padding: 0.5rem;
+    list-style: none;
+    font-weight: 400; /* Regular weight */
+    display: inline-block;
+    border: 2px solid transparent; /* Add a border for button effect */
+    border-radius: 6px; /* Rounded corners for button appearance */
+    transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease; /* Smooth transition */
+  }
+  
+  .items a {
+    display: block;
+    color: #CCCCCC;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-weight: 400;
+    transition: color 0.3s ease;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .items a:hover{
+    color: red;
+  }
+  
+@keyframes slideIn {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOut {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    /* Show the hamburger on mobile */
+    .hamburger {
+        display: block;
+    }
+
+    /* Hide nav-links by default */
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 78px;
+        right: 4px;
+        flex-direction: column;
+        background-color: #111111;
+        border: 2px solid #FF4444;
+        list-style: none;
+        padding: 0;
+        width: 182px;
+        border-radius: 12px;
+        overflow: hidden;
+        transform-origin: top right; /* Origin to make the effect look like it's shrinking into a point */
+        opacity: 0;
+        height: 50h;
+        z-index: 1000;
+    }
+
+    /* When "open", apply styles */
+    .nav-links.open {
+        display: flex;
+        opacity: 1;
+        transform: translateX(0);
+        padding: 12px 0;
+        box-shadow: 0px 6px 20px rgba(255, 0, 0, 0.4);
+        animation: slideIn 0.6s ease-out forwards;
+    }
+
+    .nav-links.closing {
+        animation: slideOut 0.6s ease-in forwards;
+    } 
+}
+
+

@@ -1,0 +1,61 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.team-section {
+  display: block;
+  justify-content: center;
+  flex-direction: column;
+  margin: 2%;
+  text-align: center;      /* Make sure background image covers the entire section */
+  position: relative;                 /* Allows for positioning of text above background */
+  overflow: hidden;                   /* Hides overflow */                 /* Full viewport height */
+  padding: 50px 10px;                 /* Adds padding to the section */
+   /* background:radial-gradient(circle at center, #231a1a, #0B0B0B); */
+   background-image: url('https://res.cloudinary.com/dnzlg8zt6/image/upload/v1738524854/x_3_zj8zyg.png');
+   background-position: center center; /* Ensure the background is centered */
+   background-repeat: no-repeat;       /* Prevents the image from repeating */
+   background-size: contain;
+   /* background; */
+   background-attachment: fixed;
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
+  color: #CCCCCC;
+  font-family: "Arial", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 20px 0;
+  display: inline-block;
+  z-index: 10;                      /* Ensures text appears above background */
+  width: 100%;
+}
+
+/* Adjust the heading size and section padding for smaller screens */
+@media (max-width: 768px) {
+  .team-section {
+    padding: 30px 10px;             /* Less padding for tablets */
+  }
+
+  h1 {
+    font-size: 28px;                /* Smaller heading for tablets */
+    padding: 15px 0;                /* Less padding for headings */
+  }
+}
+
+@media (max-width: 480px) {
+  .team-section {
+    padding: 20px 10px;             /* Less padding for mobile */
+    height: auto;                   /* Allow section to adjust height for mobile */
+  }
+
+  h1 {
+    font-size: 24px;                /* Smaller heading for mobile */
+    padding: 10px 0;                /* Less padding for headings */
+  }
+}

@@ -1,0 +1,71 @@
+/* Parent Container */
+.sponsor-div {
+  text-align: center; /* Centers all child elements */
+  padding: 50px 20px;
+  background-color: #0B0B0B;
+}
+
+/* Title Styling */
+.main-text {
+  font-size: 36px;
+  font-weight: bold;
+  color: #CCCCCC;
+  font-family: "Arial", sans-serif;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Sponsor Image Container */
+.sponsor-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; /* Allows wrapping on smaller screens */
+}
+
+/* Image Styling */
+.sponsor-image img {
+  max-width: 60%; /* Responsive size for large screens */
+  height: auto; /* Maintains aspect ratio */
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover Effect */
+.sponsor-image img:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 6px 15px rgba(255, 0, 0, 0.4);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .main-text {
+      font-size: 32px;
+  }
+  
+  .sponsor-image img {
+      max-width: 70%;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-text {
+      font-size: 28px;
+  }
+
+  .sponsor-image img {
+      max-width: 80%;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-text {
+      font-size: 24px;
+  }
+
+  .sponsor-image img {
+      max-width: 90%;
+  }
+}

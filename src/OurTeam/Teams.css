@@ -1,0 +1,128 @@
+  /* General Styling */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Main Container */
+.main-div {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Team Members Container */
+.image_section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Individual Team Member Card */
+.team-member {
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    width: 200px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+/* Hover Effects */
+.team-member:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Team Member Image */
+.team-image {
+    width: 100%;
+    object-fit: contain;
+    display: block;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease-in-out;
+}
+
+/* Remove grey filter on hover */
+.team-member:hover .team-image {
+    filter: none;
+}
+
+/* Remove grey filter permanently when clicked */
+.team-image.active {
+    filter: none;
+}
+
+/* Hover Overlay */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(100%);
+    transition: transform 0.4s ease-in-out;
+}
+
+/* Show Overlay on Hover */
+.team-member:hover .overlay {
+    transform: translateY(0);
+}
+
+/* Vertical Text Styling */
+.vertical-text {
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    letter-spacing: 2px;
+}
+
+/* Heading Text */
+.heading-text {
+    font-size: 28px;
+    font-weight: bold;
+    color: #CCCCCC;
+    margin-top: 20px;
+    text-transform: capitalize;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {  
+    .image_section {  
+        display: flex;  
+        flex-direction: row;  
+        align-items: center;  
+        overflow-x: auto;  
+        height: 20rem;  
+        perspective: 500px; /* Added for 3D effect */  
+    }  
+
+    .team-member {  
+        width: 60%;  
+        transition: transform 0.3s ease-in-out;  
+    }  
+    .image_section::-webkit-scrollbar {  
+        display: none;  
+    }
+    .heading-text{
+        font-size: 20px;
+    }
+    .head-text-div {
+        align-self: flex-start;
+        margin: auto;
+    }
+}
+
+.head-text-div {
+    align-self: flex-start;
+    margin-left: 10%;
+}
